@@ -1,9 +1,9 @@
 ## 1.9.1 (2025-01-06)
-*-* Upgrade to latest [PDFium 133.0.6927.0](https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F6927)
+* Upgrade to latest [PDFium 133.0.6927.0](https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F6927)
     * Upgrade `include` folder
     * Upgrade `libmodpdfium.so` for `arm32`, `arm64`, `x86` and `x86_64`(`mips` binary not included)
     * Use new Pdfium API in `mainJNILib.cpp`
-* Add `CMakeLists.txt` for building `.so` file
+* Add `CMakeLists.txt` for building the PdfiumAndroid library
     * Example cmake command
     ```bash
     export ABI=arm64-v8a && \
@@ -19,6 +19,8 @@
         -DANDROID_PLATFORM=android-26 \
         -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON
     ```
+* Add [libpng v1.6.44](https://github.com/pnggroup/libpng/releases/tag/v1.6.44) and [libfreetype2 v2.10.0](https://download.savannah.gnu.org/releases/freetype/) binaries for building PdfiumAndroid library. 
+    * Add `build-3rdparty.sh` script for building `libpng` and `libfreetype2`
 
 ## 1.9.0 (2018-06-29)
 * Updated Pdfium library to 7.1.2_r36
