@@ -1,3 +1,27 @@
+## What's new in 1.9.1?
+- Upgrade to latest [PDFium 133.0.6927.0](https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F6927)
+    - Upgrade `include` folder
+    - Upgrade `libmodpdfium.so` for `arm32`, `arm64`, `x86` and `x86_64`(`mips` binary not included)
+    - Use new Pdfium API in `mainJNILib.cpp`
+- Add `CMakeLists.txt` for building `.so` file
+    - Example cmake command
+    ```bash
+    export ABI=arm64-v8a && \
+        export NDK_ROOT=PATH/TO/NDK && \
+        cmake -B builddir/${ANDROID_ABI}/ \
+        -S . \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DANDROID_NDK=${NDK_ROOT} \
+        -DCMAKE_ANDROID_NDK=${NDK_ROOT} \
+        -DCMAKE_SYSTEM_NAME=Android \
+        -DCMAKE_ANDROID_ARCH_ABI=${ANDROID_ABI} \
+        -DANDROID_ABI=${ANDROID_ABI} \
+        -DANDROID_PLATFORM=android-26 \
+        -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON
+    ```
+
+
+
 # Pdfium Android binding with Bitmap rendering
 Uses pdfium library [from AOSP](https://android.googlesource.com/platform/external/pdfium/)
 
