@@ -8,3 +8,9 @@ src/main/obj
 .DS_Store
 /build
 /captures
+
+
+# build directories
+builddir/*
+freetype-*
+libpng
