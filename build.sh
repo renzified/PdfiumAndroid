@@ -51,10 +51,11 @@ build_libpng() {
 
 
 build_libfreetype2() {
-    rm -fr freetype-2.10.0.tar.gz freetype-2.10.0
-    wget https://download.savannah.gnu.org/releases/freetype/freetype-2.10.0.tar.gz
-    tar -xvzf freetype-2.10.0.tar.gz
-    export SRC_DIR=freetype-2.10.0
+    FREETYPE_VERSION=2.13.3
+    rm -fr freetype-${FREETYPE_VERSION}.tar.gz freetype-${FREETYPE_VERSION}
+    wget https://download.savannah.gnu.org/releases/freetype/freetype-${FREETYPE_VERSION}.tar.gz
+    tar -xvzf freetype-${FREETYPE_VERSION}.tar.gz
+    export SRC_DIR=freetype-${FREETYPE_VERSION}
 
     for ABI in ${BUILD_ARCHS}; do
         export BUILD_DIR=${BUILD_ROOT}/${SRC_DIR}/${ABI}

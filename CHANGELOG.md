@@ -1,3 +1,7 @@
+## 1.9.2 (2025-03-15)
+* Upgrade libfreetype to 2.13.3
+  * It is a security update, see [here](https://nvd.nist.gov/vuln/detail/CVE-2025-27363) for more details.
+
 ## 1.9.1 (2025-01-06)
 * Upgrade to latest [PDFium 133.0.6927.0](https://github.com/bblanchon/pdfium-binaries/releases/tag/chromium%2F6927)
     * Upgrade `include` folder
@@ -20,7 +24,7 @@
         -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON
     ```
 * Add [libpng v1.6.44](https://github.com/pnggroup/libpng/releases/tag/v1.6.44) and [libfreetype2 v2.10.0](https://download.savannah.gnu.org/releases/freetype/) binaries for building PdfiumAndroid library. 
-    * Add `build-3rdparty.sh` script for building `libpng` and `libfreetype2`
+    * Add `build.sh` script for building `libpng` and `libfreetype2`
 
 ## 1.9.0 (2018-06-29)
 * Updated Pdfium library to 7.1.2_r36
