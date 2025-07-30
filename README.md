@@ -6,6 +6,8 @@ This repository is a fork of [meganz/PdfiumAndroid](https://github.com/meganz/Pd
 
 This fork is updated to **SDK 35 / NDK 28** and delivers a working AAR compatible with **Android 15 (16KB page size support)**.
 
+**Version 2.0.0** - Significant updates to the build layer and compatibility improvements warrant a major version bump from the original 1.9.0.
+
 ### Key Updates:
 - **Android SDK 35** and **NDK 28** compatibility
 - **Android Gradle Plugin 8.9.2** support
@@ -48,17 +50,17 @@ Remark: you might need to update the 'javaHome' environment variable in the `gra
 # Build release AAR  
 ./gradlew assembleRelease
 
-# Output: build/outputs/aar/PdfiumAndroid-release.aar
+# Output: build/outputs/aar/PdfiumAndroid-2.0.0-release.aar
 ```
 
 ## Using in Your Project
 
 ### Method 1: Local AAR
-1. Copy `PdfiumAndroid-release.aar` to your app's `libs/` folder
+1. Copy `PdfiumAndroid-2.0.0-release.aar` to your app's `libs/` folder
 2. Add to your app's `build.gradle`:
 ```groovy
 dependencies {
-    implementation files('libs/PdfiumAndroid-release.aar')
+    implementation files('libs/PdfiumAndroid-2.0.0-release.aar')
     implementation 'androidx.core:core:1.16.0'
 }
 ```
@@ -70,7 +72,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.yourusername:your-repo-name:tag'
+    implementation 'com.github.yourusername:PdfiumAndroid:v2.0.0'
 }
 ```
 
