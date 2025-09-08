@@ -51,7 +51,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 35
         versionCode 2
-        versionName "2.0.2"
+        versionName "2.0.3"
         buildConfigField "String", "VERSION_NAME", "\"${versionName}\""
     }
     buildTypes {
@@ -83,7 +83,7 @@ android {
     // Configure AAR filename to include version
     libraryVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "PdfiumAndroid-${defaultConfig.versionName}-${variant.buildType.name}.aar"
+            outputFileName = "PdfiumAndroid-${defaultConfig.versionName}.aar"
         }
     }
 
@@ -112,7 +112,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.shockwave.pdfium'
             artifactId = 'pdfium-android'
-            version = '2.0.2'
+            version = '2.0.3'
 
             afterEvaluate {
                 from components.release
