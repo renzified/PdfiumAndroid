@@ -51,7 +51,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 35
         versionCode 2
-        versionName "2.0.1"
+        versionName "2.0.2"
         buildConfigField "String", "VERSION_NAME", "\"${versionName}\""
     }
     buildTypes {
@@ -112,7 +112,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.shockwave.pdfium'
             artifactId = 'pdfium-android'
-            version = '2.0.1'
+            version = '2.0.2'
 
             afterEvaluate {
                 from components.release
