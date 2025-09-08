@@ -17,6 +17,7 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 ext {
     bintrayRepo = 'maven'
@@ -85,6 +86,13 @@ android {
             outputFileName = "PdfiumAndroid-${defaultConfig.versionName}-${variant.buildType.name}.aar"
         }
     }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 repositories {
@@ -97,6 +105,20 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.core:core:1.16.0'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.shockwave.pdfium'
+            artifactId = 'pdfium-android'
+            version = '2.0.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
 }
 
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
